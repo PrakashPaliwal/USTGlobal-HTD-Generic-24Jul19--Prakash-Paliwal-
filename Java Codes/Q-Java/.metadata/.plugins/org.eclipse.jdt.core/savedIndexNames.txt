@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+F:\Q Spider Java\Q-Java\.metadata\.plugins\org.eclipse.jdt.core
+1740470630.index
+1095428976.index
+2157730889.index
+1331998974.index
+4170970559.index
+708779038.index
