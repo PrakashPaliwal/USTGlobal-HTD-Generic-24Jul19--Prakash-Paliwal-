@@ -1,0 +1,85 @@
+
+<div class="container">
+    <div class="col-md-7 offset-mt-3">
+
+<div class="card card-body">
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Tasks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of view;index as i">
+                <td>{{i+1}}</td>
+                <td>{{task.taskname}}</td>
+               
+              <td>  <button class="btn btn-success" (click)=deletedata(i)>Delete</button></td>
+
+             <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal" >
+                   Edit
+                  </button></td>               
+            </tr>
+        </tbody>
+    </table>
+    
+
+</div>
+</div>
+</div>
+
+<!-- 
+<form action="" method="POST" role="form">
+    <legend>Modify Data</legend>
+    <input type="text" class="form-control" id="" placeholder="Enter Task" name="taskname" #taskname="ngModel" ngModel > 
+</div>
+
+<button type="submit" class="btn btn-primary" >Save</button> -->
+
+    
+
+
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+
+
+                    <form #formdata='ngForm' (ngSubmit)='adddata(formdata.value)'>
+                            <legend>Add Task</legend>
+                        
+                            <div class="form-group">
+                                
+                                <input type="text" class="form-control" id="" placeholder="Enter Task" name="taskname" #taskname="ngModel" ngModel >
+                           
+                            </div>
+                        
+                            
+                        </form>
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
