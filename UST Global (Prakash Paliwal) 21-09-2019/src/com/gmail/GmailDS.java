@@ -1,5 +1,6 @@
 package com.gmail;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -44,13 +45,14 @@ public class GmailDS {
 		System.out.println(acc);
 
 		if (acc != null) {
-			if (acc.getUserName().equals(usr)) {
+			if (acc.getEmail().equals(usr)) {
 
 				if (acc.getPassword().equals(pwd)) {
 					System.out.println("Valid Account !!");
 					GmailData.loginDisplay(acc);
 				} else {
 					System.out.println("Invalid Password or user name");
+					loginPage();
 				}
 
 			}
@@ -62,7 +64,11 @@ public class GmailDS {
 	static public void inbox(Account a) {
 		Inbox ib = a.getI();
 
-		System.out.println("The message is : " + ib.getMessage());
+		System.out.println("The messages in Inbox are : ");
+		String msg[] = ib.getMessage();
+		for(int i=0; i<msg.length;i++) {
+			System.out.println(msg[i]+" ");
+		}
 		GmailData.loginDisplay(a);
 
 	}
@@ -73,8 +79,9 @@ public class GmailDS {
 		String email = s.next();
 		System.out.println("Enter the Message");
 		String message = s.next();
-		Account b = hm.get(email);
-		Inbox i = b.getI();
+		
+		Account c = hm.get(email);
+		Inbox i = c.getI();
 		i.setMessage(message);
 
 		GmailData.loginDisplay(a);

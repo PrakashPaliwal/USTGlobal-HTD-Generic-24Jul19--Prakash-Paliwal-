@@ -1,8 +1,8 @@
 package com.gmail;
 
 public class Account {
-
-	private int user_id = 0;
+	static int idGen = 0;
+	private int user_id;
 	private String userName;
 	private String password;
 	private String email;
@@ -45,7 +45,8 @@ public class Account {
 	 * @param user_id the user_id to set
 	 */
 	public void setUser_id() {
-		this.user_id++;
+		this.user_id = this.idGen;
+		this.idGen++;
 	}
 
 	/**
