@@ -1,0 +1,26 @@
+<div class="text-center">
+    <div class="col-md-9 mt-4">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                          <th>Index </th>
+                          <th>Name </th>
+                          <th>Username </th>
+                          <th>Email </th>
+                          <th>Website </th>
+                          <th>Address </th>
+                </tr>
+              </thead>
+               <tbody>
+                <tr *ngFor="let udata of usd">
+                    <td>{{udata.id}}</td>
+                    <td>{{udata.name}}</td>
+                    <td>{{udata.username}}</td>
+                    <td>{{udata.email}}</td>
+                    <td>{{udata.website}}</td>
+                    <td>{{udata.address.city}}</td>
+                </tr>
+            </tbody>
+          </table>      
+    </div>
+</div>

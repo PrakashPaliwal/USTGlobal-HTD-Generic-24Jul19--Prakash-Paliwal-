@@ -1,0 +1,42 @@
+<div class="container col-md-6 offset-3 mt-5">
+
+    
+    <form action="" method="POST" role="form" #Addtask='ngForm' (ngSubmit)="sendtask(Addtask.value)">
+       
+    
+        <div class="form-group">
+           
+            <input type="text" class="form-control" name="taskname" #taskname="ngModel" ngModel placeholder="Add Task...!" required >
+        </div>
+    
+        <div class="alert alert-warning" *ngIf="taskname.invalid && taskname.touched">
+            Please enter task
+        </div>
+        
+    
+        <button type="submit" class="btn btn-outline-primary" [disabled]="taskname.invalid">Add Task</button>
+    </form>
+    
+</div>
+
+
+<div class="col-md-6 offset-3">
+   
+    <table class="table table-hover">
+        <thead>
+            <!-- <tr>
+                <th>Task Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr> -->
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of viewdata;index as i">
+                <td>{{i+1}}</td>
+                <td>{{view.taskname}}</td>
+                <td><button class="btn btn-outline-danger" (click)="delete(i)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+ </div>
